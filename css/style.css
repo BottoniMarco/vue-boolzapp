@@ -243,42 +243,56 @@ body {
 
 /* chat conversation */
 .messages {
-  display: flex;
-
+  position:relative;
   width: 100%;
   height: calc(100% - 60px - 40px);
   background: purple;
 }
 
+.messages::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .user-messages {
   display: flex;
-  flex-direction: column;
-  justify-content:  flex-start;
-
+  align-items: center;
+  height: 45px;
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 25px;
+  padding-left: 10px;
+  background: #D5F9BA;
 }
 
 .correspondent-messages {
   display: flex;
-  flex-direction: column;
-  justify-content:  flex-end;
-  align-items: flex-start;
-
-}
-
-.user-text {
-  display: flex;
-  height: 60px;
+  align-items: center;
+  height: 45px;
   width: 200px;
-  background: #D5F9BA;
-}
-
-.correspondent-text {
-  display: flex;
-
-  height: 60px;
-  width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 25px;
+  padding-left: 10px;
   background: white;
 }
+
+#txt-1 {
+  float: right;
+}
+
+#txt-2 {
+  float: right;
+  clear: right;
+}
+
+#txt-3 {
+  float: left;
+  clear: right;
+}
+
 /* /chat conversation */
 
 /* text input */
