@@ -60,7 +60,16 @@
           <input type="text" name="" value="">
         </div>
 
-        <div class="contact-list">
+        <div id="contactList">
+            <div class="contact-chat" v-for="contact in contacts" :key="contact.name"
+            >
+              <img :src="contact.avatar" alt="">
+              <p>
+                {{ contact.name }}
+              </p>
+            </div>
+        </div>
+        <!-- <div class="contact-list">
           <div class="contact-chat" id="michele">
             <img  src="https://png.pngtree.com/png-vector/20190704/ourmid/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg
             " alt="">
@@ -79,7 +88,7 @@
             <p>luisa</p>
           </div>
 
-        </div>
+        </div> -->
 
       </div>
 
@@ -116,7 +125,7 @@
         </div>
 
         <div class="messages">
-          
+
           <div id="txt-1" class="user-messages">
             <p>hai portato a spasso il cane?</p>
           </div>
