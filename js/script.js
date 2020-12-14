@@ -87,7 +87,9 @@ var waBox = new Vue ({
     	},
     ],
     activeUser: 0,
+    newText:""
   },
+
   methods:{
     chatIndex : function (index) {
 
@@ -95,5 +97,28 @@ var waBox = new Vue ({
       console.log(index);
       console.log("act ",this.activeUser);
     },
+    text : function (index) {
+      let newTxt = {
+        date: '10/01/2020 15:50:00',
+        text:this.newText,
+        status: "sent"
+      };
+      this.contacts[this.activeUser].messages.push(newTxt);
+    },
+    textBack: function () {
+      let txtBack = {
+        date: '10/01/2020 15:50:00',
+        text:"OK",
+        status: "received"
+      };
+      this.contacts[this.activeUser].messages.push(txtBack);
+
+    },
+
+    delayTB: function () {
+      setTimeout(this.textBack , 1000);
+
+    }
+
   }
 })

@@ -106,9 +106,8 @@
 
         <div id="messages" >
 
-          <div class="message" v-for="user in contacts[activeUser]">
-            <p class="test" v-for="messages in user" :class="(messages.status == 'sent') ? 'sent' : 'received' ">
-
+          <div class="message">
+            <p class="test" v-for="messages in contacts[activeUser].messages" :class="(messages.status == 'sent') ? 'sent' : 'received' ">
               {{ messages.text }}
             </p>
           </div>
@@ -117,8 +116,12 @@
 
         <div class="chat-text">
           <i class="far fa-smile"></i>
-          <input type="text" name="" value="" placeholder="Scrivi messaggio">
+          <input v-model="newText" type="text" name="" value="" placeholder="Scrivi messaggio" >
           <i class="fas fa-microphone"></i>
+          <button type="button" name="button" @click="text() ; delayTB() " >
+            AGGIUNGI
+          </button>
+
         </div>
 
 
