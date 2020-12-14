@@ -62,6 +62,7 @@
 
         <div id="contactList">
             <div class="contact-chat" v-for="contact in contacts" :key="contact.name"
+            @click="showChat"
             >
               <img :src="contact.avatar" alt="">
               <p>
@@ -69,27 +70,6 @@
               </p>
             </div>
         </div>
-        <!-- <div class="contact-list">
-          <div class="contact-chat" id="michele">
-            <img  src="https://png.pngtree.com/png-vector/20190704/ourmid/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg
-            " alt="">
-            <p>Michele</p>
-          </div>
-          <div class="contact-chat" id="fabio">
-            <img src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
-            <p>fabio</p>
-          </div>
-          <div class="contact-chat" id="samuele">
-            <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="">
-            <p>samuele</p>
-          </div>
-          <div class="contact-chat" id="luisa">
-            <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg" alt="">
-            <p>luisa</p>
-          </div>
-
-        </div> -->
-
       </div>
 
       <div class="chat">
@@ -124,20 +104,20 @@
 
         </div>
 
-        <div class="messages">
+        <div id="messages">
+          <div id="txt-1" class="user-messages" v-for="message in userMessages"  >
+            {{ message }}
 
-          <div id="txt-1" class="user-messages">
-            <p>hai portato a spasso il cane?</p>
+          <p>
+
+
+          </p>
+          <!-- <p v-for="txt "
+          >
+              {{ txt.user }}
+              {{ txt.correspondent }}
+            </p> -->
           </div>
-          <div id="txt-2" class="user-messages">
-            <p>gli hai dato da mangiare?</p>
-          </div>
-
-
-          <div id="txt-3" class="correspondent-messages">
-            <p>tutto fatto</p>
-          </div>
-
         </div>
 
         <div class="chat-text">
