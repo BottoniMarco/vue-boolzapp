@@ -237,55 +237,35 @@ body {
 
 /* chat conversation */
 #messages {
-  position:relative;
+  display: flex;
+  overflow-y: scroll;
   width: 100%;
   height: calc(100% - 60px - 40px);
-    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
 }
 
-#messages::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* .user-messages {
+.message {
   display: flex;
-  align-items: center;
-  height: 45px;
-  width: 200px;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-right: 25px;
-  padding-left: 10px;
+  flex-direction: column;
+
+
+}
+
+.test {
+  max-width: 250px;
+  margin : 10px;
+  padding: 5px;
+  align-items: flex-end;
+}
+
+.test.sent {
   background: #D5F9BA;
 }
 
-.correspondent-messages {
-  display: flex;
-  align-items: center;
-  height: 45px;
-  width: 200px;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-left: 25px;
-  padding-left: 10px;
+.test.received {
+  align-self: flex-start;
   background: white;
 }
-
-#txt-1 {
-  float: right;
-}
-
-#txt-2 {
-  float: right;
-  clear: right;
-}
-
-#txt-3 {
-  float: left;
-  clear: right;
-} */
 
 /* /chat conversation */
 

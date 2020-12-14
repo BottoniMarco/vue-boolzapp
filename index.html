@@ -103,13 +103,17 @@
 
         </div>
 
-        <div id="messages">
-          <div id="txt-1" class="user-messages" v-for="user in contacts[activeUser]">
-            <p>
-              {{ user.messages }}
+
+        <div id="messages" >
+
+          <div class="message" v-for="user in contacts[activeUser]">
+            <p class="test" v-for="messages in user" :class="(messages.status == 'sent') ? 'sent' : 'received' ">
+
+              {{ messages.text }}
             </p>
           </div>
         </div>
+
 
         <div class="chat-text">
           <i class="far fa-smile"></i>
