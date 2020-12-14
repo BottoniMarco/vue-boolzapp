@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(blue 15%, grey 0%);
+  background: linear-gradient(#009688 15%, #DCDBD1 0%);
   height:100vh;
 }
 
@@ -122,7 +122,7 @@ body {
   padding: 5px 0;
   height: 60px;
   width: 100%;
-  background: green;
+  background: #FAFAFA;
 }
 
 .user-search i {
@@ -173,6 +173,11 @@ body {
 
 .contact-chat:hover{
   background: lightgrey
+}
+
+.contact-chat.active{
+  background: grey;
+
 }
 
 /* /contacts */
