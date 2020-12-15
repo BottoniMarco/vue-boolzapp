@@ -266,7 +266,9 @@ body {
   background: white;
 }
 
-.test.sent.remove-message {
+.remove-message {
+  height: 50px;
+  width: 50px;
   background: pink;
 }
 

@@ -112,7 +112,7 @@
 
           <div class="message">
             <p class="test" v-for="messages in contacts[activeUser].messages" :class="(messages.status == 'sent') ? 'sent' : 'received' "
-            :class="remove-message : deleteText"
+            :class="(deleteText == true) ? 'remove-message' : ''"
             @click="removeText">
               {{ messages.text }}
             </p>
