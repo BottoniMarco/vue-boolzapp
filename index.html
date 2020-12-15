@@ -57,12 +57,14 @@
 
         <div class="user-search">
           <i class="fas fa-search"></i>
-          <input type="text" name="" value="">
+          <input v-model="searchLetters" type="text" name="" value="" @click="userResearch()">
         </div>
 
         <div id="contactList">
             <div class="contact-chat" v-for="(user , index)  in contacts"
-            :class="(index == activeUser) ? 'active' : '' " @click="chatIndex(index)"
+            :class="(index == activeUser) ? 'active' : '' "
+            :class="(user.name == names[i]) ? 'letter' : '' "
+            @click="chatIndex(index)"
             >
             <img :src="user.avatar" alt="">
             {{ user.name }}
@@ -76,12 +78,14 @@
 
           <ul class="correspondent-id">
             <li>
-              <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg
+              <img :src="contacts[activeUser].avatar
               " alt="">
             </li>
 
             <li>
-              <span>Nome Utente</span>
+              <span>
+                {{ contacts[activeUser].name }}
+              </span>
             </li>
 
           </ul>
@@ -116,12 +120,8 @@
 
         <div class="chat-text">
           <i class="far fa-smile"></i>
-          <input v-model="newText" type="text" name="" value="" placeholder="Scrivi messaggio" >
+          <input v-model="newText" type="text" name="" value="" placeholder="Scrivi messaggio" v-on:keyup.enter="text() ; delayTB() ;">
           <i class="fas fa-microphone"></i>
-          <button type="button" name="button" @click="text() ; delayTB() " >
-            AGGIUNGI
-          </button>
-
         </div>
 
 

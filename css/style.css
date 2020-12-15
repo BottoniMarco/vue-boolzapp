@@ -177,8 +177,12 @@ body {
 
 .contact-chat.active{
   background: grey;
-
 }
+
+.contact-chat.letter{
+  background: pink;
+}
+
 
 /* /contacts */
 
@@ -248,20 +252,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-
 }
 
 .test {
-
   max-width: 250px;
   margin : 10px;
   padding: 5px;
-
 }
 
 .test.sent {
-
   background: #D5F9BA;
 }
 

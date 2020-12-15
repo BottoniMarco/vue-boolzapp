@@ -87,7 +87,8 @@ var waBox = new Vue ({
     	},
     ],
     activeUser: 0,
-    newText:""
+    newText:"",
+    searchLetters:""
   },
 
   methods:{
@@ -114,11 +115,27 @@ var waBox = new Vue ({
       this.contacts[this.activeUser].messages.push(txtBack);
 
     },
-
     delayTB: function () {
       setTimeout(this.textBack , 1000);
+    },
+    userResearch: function () {
+      let n = 0;
+      let names = [];
+      while (n<4) {
+        names.push(this.contacts[n].name);
+        console.log(names);
+        n++;
+      }
+      console.log("test");
+      for (var i = 0; i < names.length; i++) {
 
+        if (names[i].includes(this.searchLetters) == true){
+          console.log("questi ",names[i]);
+        }else {
+          console.log("pappa");
+        }
+      }
     }
-
   }
+
 })
