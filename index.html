@@ -57,13 +57,13 @@
 
         <div class="user-search">
           <i class="fas fa-search"></i>
-          <input v-model="searchLetters" type="text" name="" value="" @click="userResearch()">
+          <input v-model="searchLetters" type="text" name="" value="" v-on:keyup="userResearch()">
         </div>
 
         <div id="contactList">
             <div class="contact-chat" v-for="(user , index)  in contacts"
             :class="(index == activeUser) ? 'active' : '' "
-            :class="(user.name == names[i]) ? 'letter' : '' "
+            v-if="user.visible"
             @click="chatIndex(index)"
             >
             <img :src="user.avatar" alt="">
@@ -111,7 +111,9 @@
         <div id="messages" >
 
           <div class="message">
-            <p class="test" v-for="messages in contacts[activeUser].messages" :class="(messages.status == 'sent') ? 'sent' : 'received' ">
+            <p class="test" v-for="messages in contacts[activeUser].messages" :class="(messages.status == 'sent') ? 'sent' : 'received' "
+            :class="remove-message : deleteText"
+            @click="removeText">
               {{ messages.text }}
             </p>
           </div>
@@ -120,14 +122,10 @@
 
         <div class="chat-text">
           <i class="far fa-smile"></i>
-          <input v-model="newText" type="text" name="" value="" placeholder="Scrivi messaggio" v-on:keyup.enter="text() ; delayTB() ;">
+          <input v-model="newText" type="text" name="" value="" placeholder="Scrivi messaggio" v-on:keyup.enter="text() ">
           <i class="fas fa-microphone"></i>
         </div>
-
-
       </div>
-
-
     </div>
     <script src="js/script.js" charset="utf-8"></script>
   </body>

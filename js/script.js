@@ -88,7 +88,8 @@ var waBox = new Vue ({
     ],
     activeUser: 0,
     newText:"",
-    searchLetters:""
+    searchLetters:"",
+    deleteText: false
   },
 
   methods:{
@@ -105,18 +106,16 @@ var waBox = new Vue ({
         status: "sent"
       };
       this.contacts[this.activeUser].messages.push(newTxt);
-    },
-    textBack: function () {
-      let txtBack = {
-        date: '10/01/2020 15:50:00',
-        text:"OK",
-        status: "received"
-      };
-      this.contacts[this.activeUser].messages.push(txtBack);
 
-    },
-    delayTB: function () {
-      setTimeout(this.textBack , 1000);
+      setTimeout(function () {
+        let txtBack = {
+          date: '10/01/2020 15:50:00',
+          text:"OK",
+          status: "received"
+        };
+        waBox.contacts[waBox.activeUser].messages.push(txtBack);
+      },1000);
+      this.newText="";
     },
     userResearch: function () {
       let n = 0;
@@ -128,13 +127,17 @@ var waBox = new Vue ({
       }
       console.log("test");
       for (var i = 0; i < names.length; i++) {
-
         if (names[i].includes(this.searchLetters) == true){
-          console.log("questi ",names[i]);
         }else {
-          console.log("pappa");
+          this.contacts[i].visible=false;
         }
       }
+    },
+    removeText: function () {
+      console.log("prima ",this.deleteText);
+      this.deleteText = true;
+      console.log("dopo ", this.deleteText);
+      this.deleteText = false;
     }
   }
 

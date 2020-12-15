@@ -24,6 +24,7 @@ body {
   height: 100%;
   width: 40%;
   background: orange;
+  border-right: 1px solid #B1B1B1;
 }
 /* username */
 .username {
@@ -143,6 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-y: scroll;
   height: 100%;
   width: 100%;
   padding-top: 20px;
@@ -178,12 +180,6 @@ body {
 .contact-chat.active{
   background: grey;
 }
-
-.contact-chat.letter{
-  background: pink;
-}
-
-
 /* /contacts */
 
 /* correspondent */
@@ -241,7 +237,6 @@ body {
 
 /* chat conversation */
 #messages {
-
   overflow-y: scroll;
   width: 100%;
   height: calc(100% - 60px - 40px);
@@ -255,9 +250,11 @@ body {
 }
 
 .test {
-  max-width: 250px;
+  width: 250px;
   margin : 10px;
   padding: 5px;
+  border-radius: 10px;
+  overflow-wrap: break-word;
 }
 
 .test.sent {
@@ -268,6 +265,11 @@ body {
   align-self: flex-start;
   background: white;
 }
+
+.test.sent.remove-message {
+  background: pink;
+}
+
 
 /* /chat conversation */
 
@@ -292,16 +294,3 @@ body {
   padding: 5px;
 }
 /* /text input */
-
-/*avatar
-
-https://png.pngtree.com/png-vector/20190704/ourmid/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg
-
-https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg
-
-https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png
-
-https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg
-
-
-https://www.pngkit.com/png/detail/115-1150342_user-avatar-icon-iconos-de-mujeres-a-color.png*/
